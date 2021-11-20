@@ -29,6 +29,36 @@ class FeedCell: UICollectionViewCell {
         return button
     }()
     
+    private let postImageView: UIImageView = {
+        let iv = UIImageView()
+        iv.contentMode = .scaleAspectFill
+        iv.clipsToBounds = true
+        iv.isUserInteractionEnabled = true
+        iv.image = UIImage(named: "venom-7")
+        return iv
+    }()
+    
+    private lazy var likeButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "like_unselected"), for: .normal)
+        button.tintColor = .black
+        return button
+    }()
+    
+    private lazy var commentButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "comment"), for: .normal)
+        button.tintColor = .black
+        return button
+    }()
+    
+    private lazy var shareButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "send2"), for: .normal)
+        button.tintColor = .black
+        return button
+    }()
+    
     //MARK: - Lifecycle
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -42,6 +72,9 @@ class FeedCell: UICollectionViewCell {
         
         addSubview(usernameButton)
         usernameButton.centerY(inView: profileImageView, leftAnchor: profileImageView.rightAnchor, paddingLeft: 8)
+        
+        
+        
     }
     
     required init?(coder: NSCoder) {
