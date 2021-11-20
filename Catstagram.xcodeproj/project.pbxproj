@@ -16,6 +16,12 @@
 		E67AF6B12748E7840025662A /* CatstagramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67AF6B02748E7840025662A /* CatstagramTests.swift */; };
 		E67AF6BB2748E7840025662A /* CatstagramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67AF6BA2748E7840025662A /* CatstagramUITests.swift */; };
 		E67AF6BD2748E7840025662A /* CatstagramUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67AF6BC2748E7840025662A /* CatstagramUITestsLaunchTests.swift */; };
+		E67AF6D02748EC860025662A /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67AF6CF2748EC860025662A /* MainTabController.swift */; };
+		E67AF6D22748F0DE0025662A /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67AF6D12748F0DE0025662A /* FeedController.swift */; };
+		E67AF6D42748F0EF0025662A /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67AF6D32748F0EF0025662A /* SearchController.swift */; };
+		E67AF6D62748F0FC0025662A /* ImageSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67AF6D52748F0FC0025662A /* ImageSelectorController.swift */; };
+		E67AF6D82748F10E0025662A /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67AF6D72748F10E0025662A /* NotificationController.swift */; };
+		E67AF6DA2748F1230025662A /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67AF6D92748F1230025662A /* ProfileController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		E67AF6B62748E7840025662A /* CatstagramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatstagramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E67AF6BA2748E7840025662A /* CatstagramUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatstagramUITests.swift; sourceTree = "<group>"; };
 		E67AF6BC2748E7840025662A /* CatstagramUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatstagramUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E67AF6CF2748EC860025662A /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
+		E67AF6D12748F0DE0025662A /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
+		E67AF6D32748F0EF0025662A /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		E67AF6D52748F0FC0025662A /* ImageSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorController.swift; sourceTree = "<group>"; };
+		E67AF6D72748F10E0025662A /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		E67AF6D92748F1230025662A /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +111,12 @@
 		E67AF6982748E7810025662A /* Catstagram */ = {
 			isa = PBXGroup;
 			children = (
+				E67AF6CE2748EAFB0025662A /* Model */,
+				E67AF6CD2748EAF70025662A /* View */,
+				E67AF6CC2748EAF20025662A /* ViewModel */,
+				E67AF6CB2748EAED0025662A /* Controller */,
+				E67AF6CA2748EAE90025662A /* API */,
+				E67AF6C92748EADA0025662A /* Utils */,
 				E67AF6992748E7810025662A /* AppDelegate.swift */,
 				E67AF69B2748E7810025662A /* SceneDelegate.swift */,
 				E67AF69D2748E7810025662A /* ViewController.swift */,
@@ -125,6 +143,54 @@
 				E67AF6BC2748E7840025662A /* CatstagramUITestsLaunchTests.swift */,
 			);
 			path = CatstagramUITests;
+			sourceTree = "<group>";
+		};
+		E67AF6C92748EADA0025662A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E67AF6CA2748EAE90025662A /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		E67AF6CB2748EAED0025662A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E67AF6CF2748EC860025662A /* MainTabController.swift */,
+				E67AF6D12748F0DE0025662A /* FeedController.swift */,
+				E67AF6D32748F0EF0025662A /* SearchController.swift */,
+				E67AF6D52748F0FC0025662A /* ImageSelectorController.swift */,
+				E67AF6D72748F10E0025662A /* NotificationController.swift */,
+				E67AF6D92748F1230025662A /* ProfileController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E67AF6CC2748EAF20025662A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E67AF6CD2748EAF70025662A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E67AF6CE2748EAFB0025662A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +325,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E67AF69E2748E7810025662A /* ViewController.swift in Sources */,
+				E67AF6D62748F0FC0025662A /* ImageSelectorController.swift in Sources */,
+				E67AF6D82748F10E0025662A /* NotificationController.swift in Sources */,
+				E67AF6D42748F0EF0025662A /* SearchController.swift in Sources */,
 				E67AF69A2748E7810025662A /* AppDelegate.swift in Sources */,
+				E67AF6DA2748F1230025662A /* ProfileController.swift in Sources */,
+				E67AF6D22748F0DE0025662A /* FeedController.swift in Sources */,
+				E67AF6D02748EC860025662A /* MainTabController.swift in Sources */,
 				E67AF69C2748E7810025662A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
