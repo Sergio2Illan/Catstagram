@@ -1,3 +1,3 @@
 # Catstagram
 
-A instagram application for cats form scratch using MVVM architecture
+A instagram application for cats from scratch using MVVM architecture
