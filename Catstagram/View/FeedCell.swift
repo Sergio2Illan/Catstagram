@@ -59,6 +59,29 @@ class FeedCell: UICollectionViewCell {
         return button
     }()
     
+    private let likeLabel:UILabel = {
+        let label = UILabel()
+        label.text = "1 like"
+        label.font = UIFont.boldSystemFont(ofSize: 12)
+        return label
+    }()
+    
+    private let captionLabel:UILabel = {
+        let label = UILabel()
+        label.text = "Some test caption for now..."
+        label.font = UIFont.systemFont(ofSize: 13)
+        return label
+    }()
+    
+    private let postTimeLabel:UILabel = {
+        let label = UILabel()
+        label.text = "2 days ago"
+        label.font = UIFont.systemFont(ofSize: 12)
+        label.textColor  = .darkGray
+        return label
+    }()
+    
+    
     //MARK: - Lifecycle
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -73,8 +96,20 @@ class FeedCell: UICollectionViewCell {
         addSubview(usernameButton)
         usernameButton.centerY(inView: profileImageView, leftAnchor: profileImageView.rightAnchor, paddingLeft: 8)
         
+        addSubview(postImageView)
+        postImageView.anchor(top: profileImageView.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 8)
+        postImageView.heightAnchor.constraint(equalTo: widthAnchor, multiplier: 1).isActive = true
         
+        configurationsButtons()
         
+        addSubview(likeLabel)
+        likeLabel.anchor(top: likeButton.bottomAnchor, left: leftAnchor, paddingTop: -4, paddingLeft: 8)
+        
+        addSubview(captionLabel)
+        captionLabel.anchor(top: likeLabel.bottomAnchor, left: leftAnchor,paddingTop: 8, paddingLeft: 8)
+        
+        addSubview(postTimeLabel)
+        postTimeLabel.anchor(top: captionLabel.bottomAnchor, left: leftAnchor,paddingTop: 8, paddingLeft: 8)
     }
     
     required init?(coder: NSCoder) {
@@ -88,5 +123,17 @@ class FeedCell: UICollectionViewCell {
     
     @objc func didTapUsername(){
         print("DEBUG: Did tap username")
+    }
+    
+    
+    //MARK: - Helpers
+    
+    func configurationsButtons() {
+        let stackView = UIStackView(arrangedSubviews: [likeButton,commentButton, shareButton])
+        stackView.axis = .horizontal
+        stackView.distribution = .fillEqually
+        
+        addSubview(stackView)
+        stackView.anchor(top: postImageView.bottomAnchor,  width: 120, height: 50)
     }
 }
