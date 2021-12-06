@@ -12,6 +12,9 @@ class LoginController: UIViewController {
     
     //MARK: - Properties
     
+    private var viewModel = LoginViewModel()
+    
+    
     private let iconImage: UIImageView = {
         let iv = UIImageView(image: #imageLiteral(resourceName: "catstagram 2"))
         iv.contentMode = .scaleAspectFill
@@ -35,10 +38,11 @@ class LoginController: UIViewController {
         let button = UIButton(type: .system)
         button.setTitle("Log In", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .systemPurple
+        button.backgroundColor = .systemPurple.withAlphaComponent(0.5)
         button.layer.cornerRadius = 5
         button.setHeight(50)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        button.isEnabled = false
         return button
     }()
     
@@ -59,8 +63,8 @@ class LoginController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureUI()
+        configureNotificationObserver()
     }
     
     //MARK: - Actions
@@ -70,6 +74,15 @@ class LoginController: UIViewController {
         navigationController?.pushViewController(controller, animated: true)
     }
     
+    
+    @objc private func textDidChange(sender: UITextField){
+        if sender == emailTextField {
+            viewModel.email = sender.text
+        }else{
+            viewModel.password = sender.text
+        }
+        updateForm()
+    }
     
     //MARK: - Helpers
     
@@ -95,6 +108,23 @@ class LoginController: UIViewController {
         view.addSubview(dontHaveAccountButton)
         dontHaveAccountButton.centerX(inView: view)
         dontHaveAccountButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor)
+    }
+    
+    private func configureNotificationObserver(){
+        emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+    }
+    
+    
+}
+
+//MARK: - FormViewModel
+
+extension LoginController: FormViewModel {
+    func updateForm() {
+        loginButton.backgroundColor = viewModel.buttonBackGroundColor
+        loginButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
+        loginButton.isEnabled = viewModel.formIsValid
     }
     
     
